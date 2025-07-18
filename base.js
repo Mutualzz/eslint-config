@@ -2,16 +2,13 @@ import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import importPlugin from "eslint-plugin-import";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
-import sonarjs from "eslint-plugin-sonarjs";
-import tseslint from "typescript-eslint";
 import turboPlugin from "eslint-plugin-turbo";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
     eslint.configs.recommended,
     tseslint.configs.recommended,
-    tseslint.configs.recommendedTypeChecked,
     tseslint.configs.stylistic,
-    sonarjs.configs.recommended,
     eslintConfigPrettier,
     eslintPluginPrettier,
     {
@@ -52,16 +49,7 @@ export default tseslint.config(
             "@typescript-eslint/restrict-template-expressions": "off",
             "@typescript-eslint/prefer-for-of": "warn",
             "@typescript-eslint/no-unsafe-assignment": "off",
-            "sonarjs/cognitive-complexity": "off",
-            "sonarjs/no-nested-conditional": "off",
-            "sonarjs/no-small-switch": "warn",
-            "sonarjs/no-nested-template-literals": "off",
-            "sonarjs/no-unused-vars": "warn",
-            "sonarjs/no-dead-store": "warn",
-            "sonarjs/unused-import": "warn",
-            "sonarjs/todo-tag": "warn",
-            "sonarjs/no-commented-code": "warn",
             "import/no-cycle": "error",
         },
-    }
+    },
 );

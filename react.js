@@ -1,6 +1,6 @@
-import baseConfig from "./base";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
+import baseConfig from "./base.js";
 
 export default [
     ...baseConfig,
