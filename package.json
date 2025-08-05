@@ -11,7 +11,6 @@
         "eslint-plugin-sonarjs": "^3.0.4",
         "eslint-plugin-turbo": "^2.5.5",
         "globals": "^16.3.0",
-        "typescript": "^5.8.3",
         "typescript-eslint": "^8.38.0"
     },
     "exports": {
@@ -20,6 +19,10 @@
         "./tanstack": "./tanstack.js"
     },
     "name": "@mutualzz/eslint-config",
+    "peerDependencies": {
+        "eslint": "^9.32.0",
+        "typescript": "^5.7.3"
+    },
     "private": true,
     "type": "module",
     "version": "0.0.0"
