@@ -1,21 +1,30 @@
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import importPlugin from "eslint-plugin-import";
-import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
+import eslintPluginPrettier from "eslint-plugin-prettier";
 import turboPlugin from "eslint-plugin-turbo";
-import tseslint from "typescript-eslint";
+import tsEslint from "typescript-eslint";
 
-export default tseslint.config(
+export const base = tsEslint.config(
     eslint.configs.recommended,
-    tseslint.configs.recommended,
-    tseslint.configs.stylistic,
+    ...tsEslint.configs.recommended,
+    ...tsEslint.configs.stylistic,
     eslintConfigPrettier,
-    eslintPluginPrettier,
     {
         plugins: {
             import: importPlugin,
             turbo: turboPlugin,
+            prettier: eslintPluginPrettier,
         },
+        files: ["**/*.ts", "**/*.tsx"],
+        ignores: [
+            "**/dist/**",
+            "**/node_modules/**",
+            "**/.turbo/**",
+            "**/*.mjs",
+            "**/*.cjs",
+            "**/*.d.ts",
+        ],
         rules: {
             "no-console": "warn",
             "@typescript-eslint/no-unused-vars": [
