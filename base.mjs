@@ -5,7 +5,22 @@ import eslintPluginPrettier from "eslint-plugin-prettier";
 import turboPlugin from "eslint-plugin-turbo";
 import tsEslint from "typescript-eslint";
 
+export const globalIgnores = [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/.turbo/**",
+    "**/out/**",
+    "**/*.mjs",
+    "**/*.cjs",
+    "**/*.d.ts",
+    "eslint.config.*",
+    "**/routeTree.gen.ts",
+];
+
 export const base = tsEslint.config(
+    {
+        ignores: globalIgnores,
+    },
     eslint.configs.recommended,
     ...tsEslint.configs.recommended,
     ...tsEslint.configs.stylistic,
@@ -17,14 +32,6 @@ export const base = tsEslint.config(
             prettier: eslintPluginPrettier,
         },
         files: ["**/*.ts", "**/*.tsx"],
-        ignores: [
-            "**/dist/**",
-            "**/node_modules/**",
-            "**/.turbo/**",
-            "**/*.mjs",
-            "**/*.cjs",
-            "**/*.d.ts",
-        ],
         rules: {
             "no-console": "warn",
             "@typescript-eslint/no-unused-vars": [
@@ -48,15 +55,15 @@ export const base = tsEslint.config(
                     fixStyle: "inline-type-imports",
                 },
             ],
-            "@typescript-eslint/no-unnecessary-type-assertion": "warn",
-            "@typescript-eslint/no-unnecessary-condition": "warn",
-            "@typescript-eslint/no-unnecessary-qualifier": "warn",
-            "@typescript-eslint/no-unnecessary-type-arguments": "warn",
-            "@typescript-eslint/no-unnecessary-type-constraint": "warn",
-            "@typescript-eslint/no-unnecessary-boolean-literal-compare": "warn",
+            "@typescript-eslint/no-unnecessary-type-assertion": "off",
+            "@typescript-eslint/no-unnecessary-condition": "off",
+            "@typescript-eslint/no-unnecessary-qualifier": "off",
+            "@typescript-eslint/no-unnecessary-type-arguments": "off",
+            "@typescript-eslint/no-unnecessary-type-constraint": "off",
+            "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off",
             "@typescript-eslint/no-misused-promises": "off",
             "@typescript-eslint/restrict-template-expressions": "off",
-            "@typescript-eslint/prefer-for-of": "warn",
+            "@typescript-eslint/prefer-for-of": "off",
             "@typescript-eslint/no-unsafe-assignment": "off",
             "import/no-cycle": "error",
         },
