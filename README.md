@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mutualzz development moved to [git.mutualzz.com](https://git.mutualzz.com/mutualzz/mutualzz)
+# Mutualzz is developed at [git.mutualzz.com](https://git.mutualzz.com/mutualzz/eslint-config)
 
 **GitHub is a read-only mirror. Issues and pull requests opened on GitHub are not monitored.**
 
@@ -14,4 +14,4 @@ These configs are used throughout the project
 
 ## License & contributions
 
-Source is available for transparency and community contributions. See [`LICENSE`](https://github.com/Mutualzz/eslint-config/blob/master/LICENSE) and [`CONTRIBUTING.md`](https://github.com/Mutualzz/eslint-config/blob/master/CONTRIBUTING.md).
+Source is available for transparency and community contributions. See [`LICENSE`](https://git.mutualzz.com/mutualzz/eslint-config/src/branch/master/LICENSE) and [`CONTRIBUTING.md`](https://git.mutualzz.com/mutualzz/eslint-config/src/branch/master/CONTRIBUTING.md).
